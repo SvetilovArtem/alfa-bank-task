@@ -1,0 +1,13 @@
+.header {
+    padding: 30px 80px;
+    background: rgb(230, 230, 230);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    label {
+        cursor: pointer;
+    }
+    .logo {
+        color: rgba(237, 78, 78, 1);
+    }
+}
