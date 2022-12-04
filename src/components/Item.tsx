@@ -22,6 +22,7 @@ const Item = ({ item, onClick, favorites, removeItem }: ItemProps) => {
         /> 
         <div className={styles.info}>
             <div className={styles.nameRu}>{item.nameRu}</div>
+            <div className={styles.rating}>{item.ratingKinopoisk}</div>
             <div className={styles.year}>{item.year}</div>
         </div>
         <MdDelete 

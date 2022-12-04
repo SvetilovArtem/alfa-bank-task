@@ -1,6 +1,6 @@
 export type ItemType = {
     countries?: string,
-    genres?: string,
+    genres?: [],
     kinopoiskId: number,
     nameRu: string,
     posterUrlPreview: string,

@@ -1,13 +1,24 @@
 .header {
     padding: 30px 80px;
-    background: rgb(230, 230, 230);
+    background: rgb(56, 39, 210);
     display: flex;
     align-items: center;
     justify-content: space-around;
     label {
+        display: flex;
+        align-items: center;
         cursor: pointer;
+        span {
+            color: rgb(255, 255, 255);
+        }
+        input {
+            width: 25px;
+            height: 20px;
+            margin: 0;
+            margin-right: 3px;
+        }
     }
     .logo {
-        color: rgba(237, 78, 78, 1);
+        color: rgb(255, 255, 255);
     }
 }
