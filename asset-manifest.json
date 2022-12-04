@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/alfa-bank-task/static/css/main.a441190e.css",
-    "main.js": "/alfa-bank-task/static/js/main.6bfe2293.js",
+    "main.css": "/alfa-bank-task/static/css/main.6ec81cb7.css",
+    "main.js": "/alfa-bank-task/static/js/main.9aeda0e0.js",
     "index.html": "/alfa-bank-task/index.html",
-    "main.a441190e.css.map": "/alfa-bank-task/static/css/main.a441190e.css.map",
-    "main.6bfe2293.js.map": "/alfa-bank-task/static/js/main.6bfe2293.js.map"
+    "main.6ec81cb7.css.map": "/alfa-bank-task/static/css/main.6ec81cb7.css.map",
+    "main.9aeda0e0.js.map": "/alfa-bank-task/static/js/main.9aeda0e0.js.map"
   },
   "entrypoints": [
-    "static/css/main.a441190e.css",
-    "static/js/main.6bfe2293.js"
+    "static/css/main.6ec81cb7.css",
+    "static/js/main.9aeda0e0.js"
   ]
 }
