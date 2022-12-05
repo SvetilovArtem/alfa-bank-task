@@ -12,7 +12,7 @@ interface ItemsProps {
 }
 
 const Items = ({ items }: ItemsProps) => {
-console.log(items)
+
 const dispatch: AppDispatch = useDispatch()  
 const favorites = useSelector((state: RootState) => state.itemsReducer.favorites)
 const removeItems = useSelector((state: RootState) => state.itemsReducer.removeItems)
@@ -39,6 +39,7 @@ function removeItem(item: ItemType) {
                 .map(item => {
                     return (
                         <Item 
+                            key={item.kinopoiskId}
                             item={item} 
                             onClick={handleClick} 
                             favorites={favorites} 

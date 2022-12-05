@@ -14,7 +14,7 @@ const Item = ({ item, onClick, favorites, removeItem }: ItemProps) => {
 
   return (
     <li className={styles.item}>
-        <img src={item.posterUrlPreview} alt="" />
+        <img src={item.posterUrlPreview} alt="" className={styles.poster} />
         <MdFavorite 
             onClick={() => onClick(item)} 
             color={ favorites.find(f => f.kinopoiskId === item.kinopoiskId) ? 'rgb(237, 78, 78)' : 'rgb(249, 249, 249)'} 
