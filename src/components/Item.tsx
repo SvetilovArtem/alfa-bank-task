@@ -26,14 +26,14 @@ const Item = ({ item, onClick, favorites, removeItem }: ItemProps) => {
             <div className={styles.year}>{item.year}</div>
         </div>
         <MdDelete 
-        color="grey"
-        onClick={() => {
-            if(!item.kinopoiskId) {
-                return null
-            } else {
-                removeItem(item)
-            }
-        }}
+            color="grey"
+            onClick={() => {
+                if(!item.kinopoiskId) {
+                    return null
+                } else {
+                    removeItem(item)
+                }
+            }}
         className={styles.deleteButton}
          />
     </li>

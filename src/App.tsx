@@ -11,21 +11,23 @@ function App() {
   const dispatch: AppDispatch = useDispatch()
   const list = useSelector((state: RootState) => state.itemsReducer.list)
   const favorites = useSelector((state: RootState) => state.itemsReducer.favorites)
-
+ 
   const [checked, setChecked] = useState(false)
   const handleChange = () => {
     setChecked(!checked)
   }
 
+  const currentPage = useSelector((state: RootState) => state.itemsReducer.currentPage)
+
   useEffect(() => {
-    dispatch(fetchItems())
-  }, [dispatch])
+    dispatch(fetchItems(currentPage))
+  }, [dispatch, currentPage])
 
   return (
     <div className="App">
       <Header checked={checked} handleChange={handleChange} />
       <Layout>
-        <Items items={checked ? favorites : list} />
+        <Items items={checked ? favorites : list} checked={checked} />
       </Layout>
       
     </div>

@@ -4,10 +4,12 @@ import { ItemType } from '../../types';
 
 export interface Items {
   list: ItemType[],
-  favorites: ItemType[]
+  favorites: ItemType[] 
   status: string,
   error: string,
   removeItems: number[],
+  currentPage: number,
+  totalPages: number
 }
 
 
@@ -17,13 +19,15 @@ const initialState: Items = {
   error: '',
   favorites: [],
   removeItems: [],
+  currentPage: 1,
+  totalPages: 0
 }
 
 export const fetchItems = createAsyncThunk(
     'items/getItems',
     
-    async function() {
-        const resp = await fetch(BASE_URL+FILMS_URL, {
+    async function(currentPage:number) {
+        const resp = await fetch(BASE_URL+FILMS_URL+`?page=${currentPage}`, {
             method: "GET",
             headers: {
                 'X-API-KEY': `${apiKey}`,
@@ -55,11 +59,15 @@ export const itemsSlice = createSlice({
       }
       
     },
+    setCurrentPage: (state, action) => {
+      state.currentPage = action.payload
+    }
 
   },
   extraReducers:  (builder) => {
     builder.addCase(fetchItems.fulfilled, (state, action) => {
       state.list = action.payload.items
+      state.totalPages = action.payload.totalPages
       state.status = ''
     })
     builder.addCase(fetchItems.pending, (state, action) => {
@@ -71,6 +79,6 @@ export const itemsSlice = createSlice({
   },
 })
 
-export const { addFavorites, removeFavorites, setRemoveItems } = itemsSlice.actions
+export const { addFavorites, removeFavorites, setRemoveItems, setCurrentPage } = itemsSlice.actions
 
 export default itemsSlice.reducer
